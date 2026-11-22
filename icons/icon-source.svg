@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-label="Naver memo exporter icon">
+  <defs>
+    <linearGradient id="bg" x1="18" y1="12" x2="110" y2="116" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#04d66a"/>
+      <stop offset="0.58" stop-color="#03c75a"/>
+      <stop offset="1" stop-color="#018f49"/>
+    </linearGradient>
+    <linearGradient id="fold" x1="38" y1="28" x2="96" y2="102" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset="1" stop-color="#e9fff3"/>
+    </linearGradient>
+    <filter id="softShadow" x="-20%" y="-20%" width="140%" height="150%">
+      <feDropShadow dx="0" dy="5" stdDeviation="5" flood-color="#005327" flood-opacity="0.26"/>
+    </filter>
+  </defs>
+
+  <rect width="128" height="128" rx="28" fill="url(#bg)"/>
+  <path d="M98 14c9 5 16 13 20 24v61c-4 7-10 13-17 17H63c25-18 41-48 35-102z" fill="#00ad52" opacity="0.32"/>
+
+  <g filter="url(#softShadow)">
+    <path d="M28 93V35c0-5 4-9 9-9h11c3 0 5 1 7 4l31 41V35c0-5 4-9 9-9h6c5 0 9 4 9 9v58c0 5-4 9-9 9H90c-3 0-5-1-7-4L52 58v35c0 5-4 9-9 9h-6c-5 0-9-4-9-9z" fill="url(#fold)"/>
+    <path d="M52 58l31 40c2 3 4 4 7 4h11c5 0 9-4 9-9v-3L57 30c-2-3-4-4-7-4H38l14 32z" fill="#d9ffe9" opacity="0.72"/>
+    <path d="M52 58L38 26h10c3 0 5 1 7 4l31 41 12 31h-8c-3 0-5-1-7-4L52 58z" fill="#ffffff"/>
+  </g>
+
+  <path d="M82 96h21c4 0 7-3 7-7V68L82 96z" fill="#01753d" opacity="0.2"/>
+  <path d="M91 78h19v11c0 4-3 7-7 7H82V87c0-5 4-9 9-9z" fill="#ffffff" opacity="0.96"/>
+  <path d="M91 78v9h-9z" fill="#caffdf"/>
+</svg>

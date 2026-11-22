@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>네이버 메모 가져오기</title>
+    <link rel="stylesheet" href="popup.css">
+    <link rel="stylesheet" href="import.css">
+  </head>
+  <body class="import-page">
+    <main class="popup">
+      <header class="header">
+        <h1>네이버 메모 가져오기</h1>
+        <p class="page-state">
+          이 확장으로 내보낸 <code>.md</code> 또는 <code>.zip</code> 백업을
+          지금 로그인된 네이버 계정의 메모로 다시 만듭니다.
+        </p>
+      </header>
+
+      <label class="field">
+        <span>백업 파일</span>
+        <input id="fileInput" type="file" accept=".md,.markdown,.txt,.zip" multiple>
+      </label>
+
+      <label class="check">
+        <input id="keepMeta" type="checkbox" checked>
+        <span>원래 생성일시를 본문 맨 끝에 적어 두기</span>
+      </label>
+
+      <label class="check">
+        <input id="skipImported" type="checkbox" checked>
+        <span>이 브라우저에서 이미 가져온 메모는 건너뛰기</span>
+      </label>
+
+      <p class="note history">
+        가져온 기록 <span id="historyCount">0</span>개 (이 브라우저에만 저장)
+        <button id="clearHistoryButton" class="link-button" type="button">기록 지우기</button>
+      </p>
+
+      <label class="field">
+        <span>네이버 아이디 <small>(가져오기가 실패할 때만 입력)</small></span>
+        <input id="userId" type="text" spellcheck="false" autocomplete="off" placeholder="비워 두면 생략">
+      </label>
+
+      <section id="preview" class="preview hidden">
+        <p id="previewSummary"></p>
+        <ol id="previewList"></ol>
+      </section>
+
+      <div class="actions">
+        <button id="testButton" class="secondary" type="button" disabled>1개만 먼저 테스트</button>
+        <button id="importButton" class="primary" type="button" disabled>모두 가져오기</button>
+        <button id="stopButton" class="secondary hidden" type="button">중지</button>
+      </div>
+
+      <p id="status" class="status" role="status" aria-live="polite"></p>
+
+      <p class="note">
+        새로 만들어지는 메모의 작성 날짜는 오늘이 되고, 모두 기본 폴더에 들어갑니다.
+        이미지는 백업에 링크로만 남아 있어 다시 올라가지 않습니다.
+      </p>
+    </main>
+
+    <script src="memo-parser.js"></script>
+    <script src="import.js"></script>
+  </body>
+</html>

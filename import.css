@@ -1,0 +1,78 @@
+body.import-page {
+  width: auto;
+  min-height: 100vh;
+}
+
+.import-page .popup {
+  max-width: 560px;
+  margin: 0 auto;
+  padding: 24px 16px;
+}
+
+.import-page input[type="file"] {
+  height: auto;
+  padding: 8px;
+}
+
+.check {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.check input {
+  width: auto;
+  height: auto;
+}
+
+.field small {
+  color: #607080;
+  font-weight: 400;
+}
+
+.preview {
+  margin-bottom: 12px;
+  padding: 10px 12px;
+  border: 1px solid #cfd8e3;
+  border-radius: 6px;
+  background: #fff;
+}
+
+.preview p {
+  margin: 0 0 6px;
+  font-weight: 600;
+}
+
+.preview ol {
+  margin: 0;
+  padding-left: 20px;
+  max-height: 220px;
+  overflow: auto;
+  color: #36444f;
+}
+
+.history {
+  margin: 0 0 12px;
+}
+
+.link-button {
+  height: auto;
+  margin-left: 6px;
+  padding: 0;
+  border: 0;
+  color: #b42318;
+  background: none;
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+.note {
+  margin: 12px 0 0;
+  color: #607080;
+  font-size: 12px;
+}
+
+code {
+  font-size: 12px;
+}

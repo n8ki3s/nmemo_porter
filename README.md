@@ -136,3 +136,7 @@ nmemo_porter/
 |-- memo-parser.js     백업 .md/.zip 읽기와 가져올 메모 만들기
 `-- icons/             확장 아이콘
 ```
+
+## 라이선스
+
+[MIT License](LICENSE)

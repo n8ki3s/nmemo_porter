@@ -15,7 +15,9 @@
 - **백업 파일을 메모로 가져오기** 버튼을 별도의 "가져오기" 영역으로 분리하고, 네이버 블로그 탭에서는 숨깁니다.
 - MIT 라이선스를 추가했습니다.
 
-## [1.1.0]
+## [1.1.0] - 2026-11-22
+
+GitHub 저장소에 처음 올린 버전입니다. (당시 `manifest.json`에는 버전이 `1.3.0`으로 적혀 있었습니다.)
 
 ### 추가
 
@@ -28,4 +30,5 @@
 
 - 네이버 메모와 네이버 블로그 글을 Markdown 파일(`.md` 하나 또는 `.zip`)로 백업하는 최초 버전입니다.
 
-[1.1.1]: https://github.com/n8ki3s/nmemo_porter/releases/tag/v1.1.1
+[1.1.1]: https://github.com/n8ki3s/nmemo_porter/compare/v1.1.0...v1.1.1
+[1.1.0]: https://github.com/n8ki3s/nmemo_porter/releases/tag/v1.1.0

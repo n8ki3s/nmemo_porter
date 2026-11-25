@@ -13,42 +13,48 @@
         <p id="pageState" class="page-state">현재 탭 확인 중...</p>
       </header>
 
-      <label class="field">
-        <span>저장 방식</span>
-        <select id="exportMode">
-          <option value="combined" selected>하나의 파일로 (.md)</option>
-          <option value="separate">파일별로 (.zip)</option>
-        </select>
-      </label>
+      <section id="exportSection" class="hidden">
+        <label class="field">
+          <span>저장 방식</span>
+          <select id="exportMode">
+            <option value="combined" selected>하나의 파일로 (.md)</option>
+            <option value="separate">파일별로 (.zip)</option>
+          </select>
+        </label>
 
-      <label class="field">
-        <span>다운로드 파일 이름</span>
-        <input id="fileName" type="text" spellcheck="false" autocomplete="off">
-      </label>
+        <label class="field">
+          <span>다운로드 파일 이름</span>
+          <input id="fileName" type="text" spellcheck="false" autocomplete="off">
+        </label>
 
-      <label id="blogOptions" class="field hidden">
-        <span>블로그 내보내기 범위</span>
-        <select id="blogVisibility">
-          <option value="public">공개 글만</option>
-          <option value="all">공개 + 비공개 글</option>
-        </select>
-      </label>
+        <label id="blogOptions" class="field hidden">
+          <span>블로그 내보내기 범위</span>
+          <select id="blogVisibility">
+            <option value="public">공개 글만</option>
+            <option value="all">공개 + 비공개 글</option>
+          </select>
+        </label>
 
-      <label id="blogCategoryOptions" class="field hidden">
-        <span>블로그 카테고리</span>
-        <select id="blogCategories" class="multi-select" multiple size="6">
-          <option value="0" selected>전체 카테고리</option>
-        </select>
-      </label>
+        <label id="blogCategoryOptions" class="field hidden">
+          <span>블로그 카테고리</span>
+          <select id="blogCategories" class="multi-select" multiple size="6">
+            <option value="0" selected>전체 카테고리</option>
+          </select>
+        </label>
 
-      <div class="actions">
-        <button id="exportButton" class="primary" type="button">마크다운 내보내기</button>
+        <button id="exportButton" class="primary block" type="button">마크다운(.md) 내보내기</button>
+        <p id="status" class="status" role="status" aria-live="polite"></p>
+      </section>
+
+      <div class="nav-actions">
         <button id="openMemoButton" class="secondary" type="button">네이버 메모 열기</button>
         <button id="openBlogButton" class="secondary" type="button">네이버 블로그 열기</button>
-        <button id="openImportButton" class="secondary" type="button">백업 파일을 메모로 가져오기</button>
       </div>
 
-      <p id="status" class="status" role="status" aria-live="polite"></p>
+      <section id="importSection" class="import-section">
+        <h2 class="section-title">가져오기</h2>
+        <button id="openImportButton" class="secondary block" type="button">백업 파일을 메모로 가져오기</button>
+      </section>
     </main>
 
     <script src="popup.js"></script>

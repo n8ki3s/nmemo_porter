@@ -73,11 +73,30 @@ select:focus {
   outline: 2px solid rgba(22, 160, 93, 0.15);
 }
 
-.actions {
-  display: grid;
-  grid-template-columns: 1fr;
+.block {
+  width: 100%;
+}
+
+.nav-actions {
+  display: flex;
   gap: 8px;
-  margin-bottom: 12px;
+}
+
+.nav-actions button {
+  flex: 1;
+}
+
+.import-section {
+  margin-top: 16px;
+  padding-top: 12px;
+  border-top: 1px solid #dfe6ee;
+}
+
+.section-title {
+  margin: 0 0 8px;
+  color: #607080;
+  font-size: 12px;
+  font-weight: 600;
 }
 
 button {
@@ -114,8 +133,9 @@ button:disabled {
 }
 
 .status {
-  min-height: 38px;
-  padding-top: 2px;
+  min-height: 20px;
+  margin-bottom: 8px;
+  padding-top: 8px;
   white-space: pre-line;
 }
 

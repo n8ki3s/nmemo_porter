@@ -11,6 +11,8 @@ const blogOptions = document.getElementById("blogOptions");
 const blogVisibilitySelect = document.getElementById("blogVisibility");
 const blogCategoryOptions = document.getElementById("blogCategoryOptions");
 const blogCategoriesSelect = document.getElementById("blogCategories");
+const exportSection = document.getElementById("exportSection");
+const importSection = document.getElementById("importSection");
 const exportButton = document.getElementById("exportButton");
 const openMemoButton = document.getElementById("openMemoButton");
 const openBlogButton = document.getElementById("openBlogButton");
@@ -36,11 +38,18 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   exportModeSelect.addEventListener("change", () => {
     setDefaultFileName(currentTarget || "backup", { forceExtension: true });
+    updateExportButtonLabel();
   });
+  updateExportButtonLabel();
 
   exportButton.addEventListener("click", exportCurrentTab);
   await refreshPageState();
 });
+
+function updateExportButtonLabel() {
+  const extension = exportModeSelect.value === "separate" ? ".zip" : ".md";
+  exportButton.textContent = `마크다운(${extension}) 내보내기`;
+}
 
 function handleRuntimeMessage(message) {
   if (!message || message.type !== "NAVER_EXPORT_PROGRESS") {
@@ -68,9 +77,13 @@ async function refreshPageState(options = {}) {
 
   setDefaultFileName(target);
 
+  exportSection.classList.toggle("hidden", !canExport);
   exportButton.disabled = !canExport;
-  openMemoButton.disabled = isMemoPage;
-  openBlogButton.disabled = isBlogPage;
+  openMemoButton.disabled = false;
+  openBlogButton.disabled = false;
+  openMemoButton.classList.toggle("hidden", isMemoPage);
+  openBlogButton.classList.toggle("hidden", isBlogPage);
+  importSection.classList.toggle("hidden", isBlogPage);
   blogOptions.classList.toggle("hidden", !isBlogPage);
   blogCategoryOptions.classList.toggle("hidden", !isBlogPage);
 
@@ -78,7 +91,7 @@ async function refreshPageState(options = {}) {
     pageState.textContent = "현재 탭: 네이버 메모";
     pageState.className = "page-state ok";
     if (!options.preserveStatus) {
-      setStatus("마크다운 내보내기를 누르면 메모를 저장합니다.", "");
+      setStatus("내보내기 버튼을 누르면 메모를 저장합니다.", "");
     }
   } else if (isBlogPage) {
     pageState.textContent = "현재 탭: 네이버 블로그";
@@ -88,11 +101,8 @@ async function refreshPageState(options = {}) {
     }
     await loadBlogCategories(tab.id, options.preserveStatus);
   } else {
-    pageState.textContent = "네이버 메모 또는 네이버 블로그를 열어 주세요.";
+    pageState.textContent = "네이버 메모 또는 네이버 블로그를 열고 로그인해 주세요.";
     pageState.className = "page-state warn";
-    if (!options.preserveStatus) {
-      setStatus("아래 버튼으로 이동한 뒤 로그인하고 다시 실행해 주세요.", "warn");
-    }
   }
 }
 
